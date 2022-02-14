@@ -1,5 +1,4 @@
 const db = require('./client');
-const namespacesByPage = require('./namespaces.json');
 
 const initCookie = (req, res, next) => {
   if (!req.cookies.lang) {
@@ -18,13 +17,8 @@ const fetchLanguages = async (req, res, next) => {
 };
 
 const fetchNS = async (req, res, next) => {
-  const { pageName } = req.params;
 
-  if (!namespacesByPage[pageName]) next(new Error(`Unknown page ${pageName}`));
-
-  console.log(namespacesByPage[pageName]);
-
-  const ns = [ ...namespacesByPage['*'], ...namespacesByPage[pageName] ];
+  const ns = [ 'main', 'home' ];
 
   const {rows} = await db.query(`SELECT term.label, translation.content
     FROM translation
@@ -42,7 +36,7 @@ const fetchNS = async (req, res, next) => {
 };
 
 const render = (req, res) => {
-  res.render(req.params.pageName);
+  res.render('home');
 };
 
 module.exports = {

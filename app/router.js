@@ -18,6 +18,6 @@ router.use(initCookie);
 router.use(fetchLanguages);
 
 // fetch translations then render
-router.get('/:pageName', fetchNS, render);
+router.get('/home', fetchNS, render);
 
 module.exports = router;
