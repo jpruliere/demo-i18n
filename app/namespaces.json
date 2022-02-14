@@ -1,0 +1,7 @@
+{
+  "*": ["main"],
+  "home": ["home"],
+  "me": ["me"],
+  "skills": ["cv"],
+  "xp": ["cv"]
+}

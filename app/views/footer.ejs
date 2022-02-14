@@ -1,0 +1,28 @@
+                        
+                    </div>
+                  </div>
+              </div>
+          </div>
+        <div class="hero-foot">
+          <div class="container">
+              <div class="tabs is-centered">
+                  <ul>
+                      <li>"Impossible is just an opinion." -Paulo Coelho.</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </section>
+  <script src="../js/bulma.js"></script>
+  <script>
+      document.querySelectorAll('.lang-selector a').forEach((langButton) => {
+          langButton.addEventListener('click', (e) => {
+              const newLang = e.currentTarget.dataset.value;
+              document.cookie = `lang=${newLang}`;
+              location.reload();
+          })
+      });
+  </script>
+</body>
+
+</html>

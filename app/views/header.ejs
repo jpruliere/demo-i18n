@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%- t('title') %></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <!-- Bulma Version 0.9.0-->
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
+    <style type="text/css">
+        html,
+        body {
+            font-family: 'Open Sans';
+        }
+
+        img {
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .navbar-item img {
+          padding: 0;
+        }
+
+        .lang-selector img {
+          padding-right: .5em;
+          border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="hero is-fullheight is-default is-bold">
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <a class="navbar-item" href="home">
+                            <img src="https://www.gravatar.com/avatar/e90cc7994daf766a76a55ec0187a9d36?s=60" alt="Logo">
+                        </a>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                          <a class="navbar-link">
+                            Langue
+                          </a>
+                  
+                          <div class="navbar-dropdown lang-selector">
+                            <% languages.forEach(function(l) { %>
+                            <a data-value="<%= l.iso_code %>" class="navbar-item">
+                              <img src="https://flagcdn.com/20x15/<%= l.iso_code %>.png"> <%= l.name %>
+                            </a>
+                            <% }); %>
+                          </div>
+                        </div>
+                        <span class="navbar-burger burger" data-target="navbarMenu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </div>
+                    <div id="navbarMenu" class="navbar-menu">
+                        <div class="navbar-end">
+                            <div class="tabs is-right">
+                                <ul>
+                                    <!-- class="is-active" to activate -->
+                                    <li><a href="home"><%- t('home') %></a></li>
+                                    <li><a href="me"><%- t('about') %></a></li>
+                                    <li><a href="skills"><%- t('skills') %></a></li>
+                                    <li><a href="xp"><%- t('xp') %></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="columns is-vcentered">
+                    <div class="column is-5">
+                        <figure class="image is-4by3">
+                            <img src="https://picsum.photos/800/600/?random" alt="A random photo">
+                        </figure>
+                    </div>
+                    <div class="column is-6 is-offset-1">
+
